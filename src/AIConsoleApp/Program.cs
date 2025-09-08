@@ -4,12 +4,13 @@ using OpenAI.Chat;
 
 var endpoint = new Uri("https://models.github.ai/inference");
 //var credential = System.Environment.GetEnvironmentVariable("GITHUB_TOKEN");
-var credential = "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";
+var credential = "xxxxx";
 var model = "openai/gpt-4.1-mini";
 
 var openAIOptions = new OpenAIClientOptions()
 {
-    Endpoint=endpoint
+    Endpoint = endpoint
+    
 };
 
 var client = new ChatClient(model, new ApiKeyCredential(credential), openAIOptions);
