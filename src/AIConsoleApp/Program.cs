@@ -1,9 +1,14 @@
 ﻿using System.ClientModel;
 using OpenAI;
 using OpenAI.Chat;
+using Microsoft.Extensions.Configuration;
 
 var endpoint = new Uri("https://models.github.ai/inference");
-var credential = System.Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+var config = new ConfigurationBuilder()
+    .AddUserSecrets<Program>()
+    .Build();
+
+var credential = config["GITHUB_TOKEN"];
 
 var model = "openai/gpt-4.1-mini";
 
